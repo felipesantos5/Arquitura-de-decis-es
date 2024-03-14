@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import title from "../assets/title.png";
 import titleWhite from "@/assets/title-white.png";
 import { UseDarkMode } from "@/contexts/DarkModeContext";
+import { motion } from "framer-motion";
 
 interface Question {
   text: string;
@@ -156,15 +157,19 @@ export const Game = () => {
             ) : (
               <p>Sua pontuação foi de {score} pontos. Tente novamente.</p>
             )}
-            <Button onClick={resetGame}>Tentar novamente</Button>
+            <Link to={"/"}>
+              <Button>Tentar novamente</Button>
+            </Link>
           </div>
         ) : (
           currentQuestion && (
             <div className="flex flex-col items-center gap-14">
               <div className="flex flex-col items-center gap-4">
                 <p>Você tem {timeLeft} segundos</p>
-                <div className="bg-white w-[600px] md:w-4/5 h-2/4 shadow-2xl text-black p-8 rounded-lg text-justify flex justify-center items-center">
-                  <p className="text-xl xsm:text-lg">{currentQuestion.text}</p>
+                <div className="bg-white w-[600px] md:w-4/5 h-64 shadow-2xl text-black p-10 rounded-lg text-justify text-pretty flex justify-center items-center">
+                  <motion.p className="text-xl xsm:text-lg" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 2 }}>
+                    {currentQuestion.text}
+                  </motion.p>
                 </div>
               </div>
               <div className="flex gap-8 sm:gap-2">
@@ -183,7 +188,7 @@ export const Game = () => {
               </div>
               <div className="flex flex-col justify-center items-center gap-4 mb-2">
                 <p className="">Pontuação: {score}</p>
-                <Progress value={scorePercentage} />
+                <Progress value={scorePercentage} className="w-56" />
               </div>
             </div>
           )
