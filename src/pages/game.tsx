@@ -3,7 +3,6 @@ import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
 import { CircleCheck, Ban, Info } from "lucide-react";
 import { Link } from "react-router-dom";
-import { DarkmodeButton } from "@/components/darkModeButton/darkbutton";
 import title from "../assets/title.png";
 import titleWhite from "@/assets/title-white.png";
 import { UseDarkMode } from "@/contexts/DarkModeContext";
