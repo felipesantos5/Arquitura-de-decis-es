@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
-import { CircleCheck, Ban, Info } from "lucide-react";
+import { CircleCheck, Ban } from "lucide-react";
 import { Link } from "react-router-dom";
 import title from "../assets/title.png";
 import titleWhite from "@/assets/title-white.png";
@@ -136,12 +136,12 @@ export const Game = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-zinc-800 h-screen dark:text-white font-semibold flex justify-center items-center darkMode-effect">
-      <div className="m-auto max-w-5xl flex flex-col gap-32 items-center">
-        <div className="flex gap-4">
-          <img src={isDarkMode ? titleWhite : title} alt="logo Arquitetura de Decisões" /> <Info />
+      <div className="m-auto max-w-5xl flex flex-col gap-32 items-center md:mx-6">
+        <div className="flex gap-4 justify-center">
+          <img src={isDarkMode ? titleWhite : title} alt="logo Arquitetura de Decisões" className="w-4/5" />
         </div>
         {endTime ? (
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-6 text-center">
             <p>Tempo esgotado! Sua pontuação final é {score} pontos.</p>
             <Link to={"/"}>
               <Button>Tente novamente</Button>
@@ -161,24 +161,24 @@ export const Game = () => {
         ) : (
           currentQuestion && (
             <div className="flex flex-col items-center gap-14">
-              <div className="bg-white w-[600px] h-60 shadow-2xl text-black p-8 rounded-lg text-justify flex justify-center items-center">
-                <p className="text-xl">{currentQuestion.text}</p>
+              <div className="bg-white w-[600px] md:w-4/5 h-2/4 shadow-2xl text-black p-8 rounded-lg text-justify flex justify-center items-center">
+                <p className="text-xl xsm:text-lg">{currentQuestion.text}</p>
               </div>
-              <div className="flex gap-10">
+              <div className="flex gap-8 sm:gap-2">
                 <button
-                  className="px-8 z-30 py-4 bg-green-500 rounded-md text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-green-700 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 [text-shadow:3px_5px_2px_#be123c;] hover:[text-shadow:2px_2px_2px_#fda4af] w-44 h-36 flex justify-center items-center"
+                  className="px-8 z-30 py-4 bg-green-500 rounded-md text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-green-700 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 [text-shadow:3px_5px_2px_#be123c;] hover:[text-shadow:2px_2px_2px_#fda4af] w-44 xsm:w-32 h-36 flex justify-center items-center"
                   onClick={() => handleAnswer(true)}
                 >
                   <CircleCheck size={35} />
                 </button>
                 <button
-                  className="px-8 z-30 py-4 bg-red-500 rounded-md text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-red-700 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 [text-shadow:3px_5px_2px_#be123c;] hover:[text-shadow:2px_2px_2px_#fda4af] w-44 h-36 flex justify-center items-center"
+                  className="px-8 z-30 py-4 bg-red-500 rounded-md text-white relative font-semibold font-sans after:-z-20 after:absolute after:h-1 after:w-1 after:bg-red-700 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 [text-shadow:3px_5px_2px_#be123c;] hover:[text-shadow:2px_2px_2px_#fda4af] w-44 h-36 xsm:w-32 flex justify-center items-center"
                   onClick={() => handleAnswer(false)}
                 >
                   <Ban size={35} />
                 </button>
               </div>
-              <div className="flex flex-col justify-center items-center gap-4">
+              <div className="flex flex-col justify-center items-center gap-4 mb-2">
                 <p className="">Pontuação: {score}</p>
                 <Progress value={scorePercentage} />
                 <p>Você tem {timeLeft} segundos</p>
