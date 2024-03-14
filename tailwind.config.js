@@ -4,12 +4,17 @@ module.exports = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    screens: {
+      "2xl": { max: "1400px" },
+      xl: { max: "1279px" },
+      lg: { max: "1000px" },
+      md: { max: "750px" },
+      sm: { max: "450px" },
+      xsm: { max: "360px" },
+    },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
       colors: {
