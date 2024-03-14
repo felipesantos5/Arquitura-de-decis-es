@@ -95,7 +95,7 @@ export const Game = () => {
   }, [currentQuestionIndex, score, endGame]);
 
   useEffect(() => {
-    let timer: number;
+    let timer: number = 0;
 
     if (timeLeft > 0 && currentQuestion) {
       timer = setInterval(() => {
