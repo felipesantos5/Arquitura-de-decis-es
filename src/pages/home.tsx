@@ -20,7 +20,7 @@ export const Home = () => {
 
   return (
     <div className="bg-white dark:bg-zinc-900 h-screen dark:text-white flex justify-center items-center darkMode-effect">
-      <div className="max-w-6xl m-auto flex flex-col items-center gap-28">
+      <div className="max-w-6xl m-auto flex flex-col items-center gap-44">
         <img src={isDarkMode ? titleWhite : title} alt="logo Arquitetura de Decisões" className="w-4/5 sm:w-full" />
         <div className="flex flex-col items-center gap-6">
           <Link to="/game">
