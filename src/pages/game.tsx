@@ -124,16 +124,7 @@ export const Game = () => {
     [currentQuestion]
   );
 
-  const resetGame = () => {
-    setEndGame(false);
-    setEndTime(false);
-    setScore(0);
-    setCurrentQuestionIndex(0);
-    setCurrentQuestion(null);
-    setTimeLeft(20);
-  };
-
-  const scorePercentage = (score / 16) * 200; // 16 pontos possíveis com 8 perguntas
+  const scorePercentage = (score / 16) * 200;
 
   return (
     <div className="bg-gray-50 dark:bg-zinc-800 h-screen dark:text-white font-semibold flex justify-center items-center darkMode-effect">
