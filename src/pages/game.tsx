@@ -155,9 +155,14 @@ export const Game = () => {
         ) : (
           currentQuestion && (
             <div className="flex flex-col items-center gap-14">
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col justify-center items-center gap-4 mb-2">
+                  <p className="">Pontuação: {score}</p>
+                  <Progress value={scorePercentage} className="w-56" />
+                </div>
                 <p>Você tem {timeLeft} segundos</p>
-                <div className="bg-white w-[600px] md:w-4/5 h-64 shadow-2xl text-black p-10 rounded-lg text-justify text-pretty flex justify-center items-center">
+
+                <div className="bg-white w-[600px] md:w-4/5 min-h-64 shadow-2xl text-black p-8 rounded-lg text-justify sm:text-center text-pretty flex justify-center items-center">
                   <motion.p className="text-xl xsm:text-lg" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ ease: "easeOut", duration: 2 }}>
                     {currentQuestion.text}
                   </motion.p>
@@ -176,10 +181,6 @@ export const Game = () => {
                 >
                   <Ban size={35} />
                 </button>
-              </div>
-              <div className="flex flex-col justify-center items-center gap-4 mb-2">
-                <p className="">Pontuação: {score}</p>
-                <Progress value={scorePercentage} className="w-56" />
               </div>
             </div>
           )

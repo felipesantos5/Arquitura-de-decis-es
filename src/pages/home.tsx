@@ -31,7 +31,7 @@ export const Home = () => {
           <DarkmodeButton />
         </div>
         {modal && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 bg- text-black px-4 xsm:px-0">
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 bg- text-black px-4 xsm:px-0 font-semibold">
             <div className="bg-white dark:bg-zinc-900 dark:text-white p-8 rounded-md m-auto max-w-4xl flex flex-col gap-3 ">
               <h2 className="text-3xl font-bold mb-8 m-auto">Regras do Jogo</h2>
               <p className="sm:text-sm">• O player vai começar com 0 pontos.</p>
