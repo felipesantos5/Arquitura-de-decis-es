@@ -1,8 +1,4 @@
-# True or False Game about Enterprise Architectures
-
----
-
-## Description
+# True or False Game about Enterprise Architecture
 
 This project consists of an educational game developed as part of an academic work on enterprise architectures. The goal is to provide an interactive and fun way to learn about the fundamental concepts of enterprise architectures.
 
